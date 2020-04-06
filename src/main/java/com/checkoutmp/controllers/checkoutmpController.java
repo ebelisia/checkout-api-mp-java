@@ -1,6 +1,5 @@
 package com.checkoutmp.controllers;
 
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +10,6 @@ import com.mercadopago.resources.Preference;
 import com.mercadopago.resources.datastructures.preference.Item;
 import com.mercadopago.resources.datastructures.preference.Payer;
 
-@PropertySource("classpath:properties")
 @Controller
 public class checkoutmpController {
 
@@ -20,9 +18,6 @@ public class checkoutmpController {
 	public String checkout(ModelMap model) throws MPException {
 		
 		MercadoPago.SDK.setAccessToken("TEST-2318480319735397-071217-715101e600b5c3f0043c10bd714cb71d-298946804");
-		
-		//MercadoPago.SDK.setClientSecret("5349866562381140");
-		//MercadoPago.SDK.setClientId("xT9onHQ1eznRjQTWXJMIO2UpjZyu36SP");
 		
 		Preference preference = new Preference();
 
